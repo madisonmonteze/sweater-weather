@@ -1,7 +1,23 @@
+/* 
+
+Optional animation settings
+
+@keyframes bgmove {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 450px 0;
+	}
+} */
+
+
 body {
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
+	height: 100vh;
+	cursor: none;
 }
 
 div.cursor {
@@ -13,9 +29,49 @@ div.cursor {
 	background-color: #4A4A4A;
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
+	transition: transform 0.25s ease;
 }
 
 div.cursor.is-down {
 	width: 60px;
 	height: 60px;
+}
+
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	mix-blend-mode: lighten;
+}
+
+div.pattern {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #FBD9F5;
+	background-image: url(../images/cover.svg);
+	/* animation: bgmove 8s infinite linear;  OPTIONAL ANIMATION */
+}
+
+section.scratched-out {
+	mix-blend-mode: darken;
+}
+
+div.lyrics {
+	background-color: #4A4A4A;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+div.lyrics img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
