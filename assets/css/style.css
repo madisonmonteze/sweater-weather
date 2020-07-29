@@ -1,0 +1,21 @@
+body {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+div.cursor {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	background-color: #4A4A4A;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+
+div.cursor.is-down {
+	width: 60px;
+	height: 60px;
+}
