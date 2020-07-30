@@ -46,7 +46,7 @@ const setupCanvas = function (canvas) {
 	}
 
 
-	context.lineWidth = 60
+	context.lineWidth = 80
 	context.lineCap = "round"
 	context.lineJoin = "round"
 
