@@ -38,6 +38,13 @@ div.cursor.is-down {
 	height: 80px;
 }
 
+div.floater {
+	width: 230px;
+	height: 200px;
+	background-image: url(../images/dollyHead.png);
+	position: fixed;
+}
+
 canvas {
 	position: fixed;
 	top: 0;
