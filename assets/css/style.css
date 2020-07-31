@@ -14,11 +14,12 @@ Optional animation settings
 
 body {
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	font-size: 20px;
-	line-height: 1.4;
+	font-size: 80px;
+	line-height: 1;
 	height: 100vh;
-	cursor: none;
+	/* cursor: none; */
 	font-weight: 200;
+	text-align: center;
 }
 
 div.cursor {
@@ -39,9 +40,9 @@ div.cursor.is-down {
 }
 
 div.floater {
-	width: 230px;
-	height: 200px;
-	background-image: url(../images/dollyHead.png);
+	width: 200px;
+	height: 230px;
+	background: url(../images/dollyHead.png) no-repeat;
 	position: fixed;
 }
 
@@ -74,12 +75,11 @@ div.lyrics {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
 	display: flex;
-	flex-direction: row;
-	color: #FBD9F5;
-	padding: 25px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #FFFFFF;
 }
 
 div.lyrics-first, div.lyrics-second, div.lyrics-third {
@@ -88,11 +88,14 @@ div.lyrics-first, div.lyrics-second, div.lyrics-third {
 
 @media (max-width: 500px) {
 	body {
-		font-size: 14px;
+		font-size: 40px;
 		line-height: 1.2;
+		align-items: center;
+		justify-content: center;
 	}
 	div.lyrics {
 		flex-direction: column;
+		flex-wrap: wrap;
 		padding-top: 0;
 	}
 }

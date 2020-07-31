@@ -34,7 +34,7 @@ const setupCanvas = function (canvas) {
 	canvas.style.height = h + "px"
 
 	// canvas context
-	const context = canvas.getContext("2d")
+	const context = canvas.getContext('2d')
 	context.scale(dpi, dpi)
 
 	if (canvas.classList.contains("in")) {
@@ -46,11 +46,11 @@ const setupCanvas = function (canvas) {
 	}
 
 
-	context.lineWidth = 80
+	context.lineWidth = 100
 	context.lineCap = "round"
 	context.lineJoin = "round"
 
-	context.shadowBlur = 10
+	context.shadowBlur = 20
 	context.shadowColor = "#4A4A4A"
 
 	context.rect(0,0, w, h)
@@ -61,6 +61,7 @@ const setupCanvas = function (canvas) {
 // start to draw, change color, based on canvas, x, y
 const startDraw = function (canvas, x, y) {
 	const context = canvas.getContext("2d")
+	context.beginPath()
 	context.moveTo(x,y)
 }
 
