@@ -105,5 +105,5 @@ document.addEventListener("mousemove", function (e) {
 
 window.addEventListener("resize", function () {
 	setupCanvas(canvasIn)
-	etupCanvas(canvasOut)	
+	setupCanvas(canvasOut)	
 })
