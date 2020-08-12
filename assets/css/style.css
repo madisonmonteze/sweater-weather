@@ -1,0 +1,48 @@
+body {
+	background-color: #171717;
+	color: #f5f5f5;
+	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1.5;
+	padding: 5vh 3vw;
+	min-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+h1 {
+	margin: 0;
+}
+
+.top, .middle, .indicators {
+	text-align: center;
+}
+
+input {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	outline: none;
+	text-align: center;
+	color: #f5f5f5;
+}
+
+.search-input {
+	font-size: 72px;
+}
+
+.search-input::placeholder {
+	color: #323232;
+}
+
+.search-clear, .spinner {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.5s ease;
+}
+
+.search-clear {
+	cursor: pointer;
+}
