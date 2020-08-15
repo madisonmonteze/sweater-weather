@@ -1,23 +1,101 @@
-body {
-	background-color: #171717;
-	color: #f5f5f5;
-	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-	font-size: 24px;
-	font-weight: bold;
-	line-height: 1.5;
-	padding: 5vh 3vw;
-	min-height: 90vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Roboto+Mono:wght@500&display=swap');
+
+:root {
+	--lightGreen: #E1EABD;
+	--hyperBlue: #0000FF;
+	--neonGreen: #BAF500;
+	--cream: #FFF5CC;
+	--black: #040404;
 }
 
-h1 {
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'EB Garamond', serif;
 	margin: 0;
 }
 
+p, input {
+	font-family: 'Roboto Mono', monospace;
+	font-style: normal;
+	font-weight: 300;	
+	margin: 0;
+}
+
+h1 {
+	font-size: 1.4em;
+}
+
+h2 {
+	font-size: 1em;
+}
+
+p {
+	font-size: 0.75em;
+	font-weight: 500;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.credits a:hover {
+	background-color: var(--neonGreen); 
+}
+
+.emphasis {
+	font-family: 'EB Garamond', serif;
+	font-style: italic;
+	font-size: 1em;
+	margin: 0;
+}
+
+/* GENERAL */
+body {
+	background-color: var(--lightGreen);
+	color: var(--black);
+	line-height: 1.5;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-family: 'EB Garamond', serif;
+	font-style: italic;
+}
+
+/* LEFT COL */
+.col.credits {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 1em 1.5em;
+	color: var(--hyperBlue);
+	width: 25%;
+}
+
+.credits .about {
+	padding-bottom: 1em;
+}
+
+
 .top, .middle, .indicators {
 	text-align: center;
+}
+
+/* MIDDLE COL */
+.col.box {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	width: 80%;
+	height: 40%;
+	border: 1px solid var(--black);
+	z-index: 10;
 }
 
 input {
@@ -26,16 +104,15 @@ input {
 	padding: 0;
 	outline: none;
 	text-align: center;
-	color: #f5f5f5;
+	color: var(--black);
 }
 
 .search-input {
-	font-size: 72px;
 	transition: opacity 0.5s ease;
 }
 
 .search-input::placeholder {
-	color: #323232;
+	color: var(--black);
 }
 
 .search-clear, .spinner {
@@ -47,6 +124,10 @@ input {
 	cursor: pointer;
 	position: relative;
 	z-index: 2;
+}
+
+.search-clear svg {
+	stroke: #000;
 }
 
 .title {
@@ -89,3 +170,18 @@ input {
 .has-results .search-input {
 	opacity: 0;
 }
+
+
+/* RIGHT COL */
+.col.visual {
+	width: 25%;
+}
+
+.visual img {
+	position: absolute;
+	width: 300px;
+	height: auto;
+	bottom: 20%;
+	right: 10%;
+}
+
