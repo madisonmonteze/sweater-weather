@@ -12,6 +12,7 @@
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'EB Garamond', serif;
 	margin: 0;
+	letter-spacing: 1px;
 }
 
 p, input {
@@ -48,6 +49,7 @@ a {
 	font-style: italic;
 	font-size: 1em;
 	margin: 0;
+	letter-spacing: 1px;
 }
 
 /* GENERAL */
@@ -56,11 +58,14 @@ body {
 	color: var(--black);
 	line-height: 1.5;
 	min-height: 100vh;
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	font-family: 'EB Garamond', serif;
 	font-style: italic;
+	overflow: hidden;
+	align-items: center;
 }
 
 /* LEFT COL */
@@ -68,9 +73,15 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	align-items: flex-end;
 	padding: 1em 1.5em;
 	color: var(--hyperBlue);
-	width: 25%;
+	width: 50%;
+}
+
+.credits .about, .credits .contact {
+	width: 50%;
+	padding: 1em;
 }
 
 .credits .about {
@@ -175,13 +186,43 @@ input {
 /* RIGHT COL */
 .col.visual {
 	width: 25%;
+	/* display: flex;
+	flex-direction: column;
+	align-items: center; */
 }
 
 .visual img {
-	position: absolute;
 	width: 300px;
 	height: auto;
-	bottom: 20%;
-	right: 10%;
+	transition: all 0.5s ease;
 }
+
+img#mrrogers {
+	position: absolute;
+	top: 1em;
+	right: 4em;
+}
+
+/* img#mrrogers:hover {
+	transform: scale(1.2) rotate(5deg);
+	z-index: 100;
+}
+
+img#harrystyles {
+	transform: rotate(-5deg);
+}
+
+img#harrystyles:hover {
+	transform: scale(1.2) rotate(2deg);
+	z-index: 100;
+}
+
+img#carriebradshaw {
+	transform: rotate(15deg);
+}
+
+img#carriebradshaw:hover {
+	transform: scale(1.2) rotate(10deg);
+	z-index: 100;
+} */
 
