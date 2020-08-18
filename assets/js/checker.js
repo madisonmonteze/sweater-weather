@@ -16,8 +16,10 @@ function createChecker (name, temp) {
 	
 	if (temp >= 55 && temp <= 65) {
 		var checkContent = document.createTextNode('Yes, it\'s sweater weather in ' + name + ". The current temperature is " + temp + ".")
+	} else if (temp > 65) {
+		var checkContent = document.createTextNode('Sorry, it\'s too warm to wear a sweater in ' + name + ". The current temperature is " + temp + ".")
 	} else {
-		var checkContent = document.createTextNode('Sorry, it\'s not sweater weather in ' + name + ". The current temperature is " + temp + ".")
+		var checkContent = document.createTextNode('Sorry, it\'s too cold for just a sweater in ' + name + ". The current temperature is " + temp + ".")
 	}
 	
 	// add text to div
@@ -42,8 +44,11 @@ const toggleLoading = state => {
 
 	if (state) {
 		document.body.classList.add('loading')
+		searchEl.disabled = true
 	} else {
 		document.body.classList.remove('loading')
+		searchEl.disabled = false
+		searchEl.focus()
 	}
 
 
@@ -86,7 +91,8 @@ const searchWeather = searchTerm => {
 
 	})
 	.catch(error => {
-
+		toggleLoading(false)
+		hintEl.innerHTML = `Nothing found for ${searchTerm}`
 	})
 }
 
@@ -101,6 +107,9 @@ const doSearch = event => {
 		searchTerm = searchEl.value
 		if (event.key === 'Enter') {
 			searchWeather(searchTerm)
+			if (event.key === 'Enter') {
+				clearSearch()
+			}
 		}
 	}
 
@@ -117,21 +126,22 @@ const doSearch = event => {
 		document.body.classList.remove('show-hint')
 
 	}
-
-	// only run search when search term is a five number zip code
-	// if (event.key === 'Enter') {
-	// 	searchWeather(searchTerm)
-	// }
 }
 
 const clearSearch = event => {
 	document.body.classList.remove('has-results')
 	checkerEl.innerHTML = ''
-	// hintEl.innerHTML = ''
+	hintEl.innerHTML = ''
 	searchEl.value = ''
 	searchEl.focus()
 }
 
+document.addEventListener('keyup', event => {
+	if (event.key === 'Escape') {
+		clearSearch()
+	}
+})
+
 // listen for keyup event on search input
-searchEl.addEventListener('keyup', (doSearch))
+searchEl.addEventListener('keyup', doSearch)
 clearEl.addEventListener('click', clearSearch)
