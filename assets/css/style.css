@@ -5,7 +5,11 @@
 	--hyperBlue: #0000FF;
 	--neonGreen: #BAF500;
 	--cream: #FFF5CC;
+	--whitesmoke: #f5f5f5;
 	--black: #040404;
+	--orange: #ff4b00;
+	--purple: #c800ff;
+	--grey: #C2C2C2;
 }
 
 /* TYPOGRAPHY */
@@ -15,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: 1px;
 }
 
-p, input {
+p, input, .search-hint {
 	font-family: 'Roboto Mono', monospace;
 	font-style: normal;
 	font-weight: 300;	
@@ -23,7 +27,7 @@ p, input {
 }
 
 h1 {
-	font-size: 1.4em;
+	font-size: 2em;
 }
 
 h2 {
@@ -54,38 +58,48 @@ a {
 
 /* GENERAL */
 body {
-	background-color: var(--lightGreen);
+	background-color: var(--whitesmoke);
 	color: var(--black);
 	line-height: 1.5;
-	min-height: 100vh;
+	min-height: 90vh;
 	width: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	font-family: 'EB Garamond', serif;
 	font-style: italic;
 	overflow: hidden;
 	align-items: center;
+	padding: 5vh 0;
 }
 
-/* LEFT COL */
+/* CREDITS / ABOUT */
 .col.credits {
 	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: flex-end;
-	padding: 1em 1.5em;
-	color: var(--hyperBlue);
-	width: 50%;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	/* padding: 1em 1.5em; */
+	width: 100%;
 }
 
-.credits .about, .credits .contact {
-	width: 50%;
-	padding: 1em;
+.credits .about, .credits .contact, .credits .details {
+	padding: 0 1em;
 }
 
 .credits .about {
-	padding-bottom: 1em;
+	color: var(--orange);
+	width: 40%;
+}
+
+.credits .contact {
+	color: var(--purple);
+	width: 20%;
+}
+
+.credits .details {
+	color: var(--hyperBlue);
+	width: 40%;
 }
 
 
@@ -93,9 +107,8 @@ body {
 	text-align: center;
 }
 
-/* MIDDLE COL */
+/* CHECKER */
 .col.box {
-	width: 50%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -103,10 +116,17 @@ body {
 }
 
 .container {
-	width: 80%;
-	height: 40%;
-	border: 1px solid var(--black);
 	z-index: 10;
+}
+
+.middle {
+	width: 100%;
+	font-size: 60px;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 input {
@@ -123,7 +143,7 @@ input {
 }
 
 .search-input::placeholder {
-	color: var(--black);
+	color: var(--grey);
 }
 
 .search-clear, .spinner {
@@ -137,8 +157,8 @@ input {
 	z-index: 2;
 }
 
-.search-clear svg {
-	stroke: #000;
+.search-hint {
+	color: var(--grey);
 }
 
 .title {
@@ -182,8 +202,13 @@ input {
 	opacity: 0;
 }
 
+.checker {
+	width: 80%;
+	line-height: 1.2;
+}
 
-/* RIGHT COL */
+
+/* VISUALS */
 .col.visual {
 	width: 25%;
 	/* display: flex;
