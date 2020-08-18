@@ -17,9 +17,9 @@ function createChecker (name, temp) {
 	if (temp >= 55 && temp <= 65) {
 		var checkContent = document.createTextNode('Yes, it\'s sweater weather in ' + name + ". The current temperature is " + temp + ".")
 	} else if (temp > 65) {
-		var checkContent = document.createTextNode('Sorry, it\'s too warm to wear a sweater in ' + name + ". The current temperature is " + temp + ".")
+		var checkContent = document.createTextNode('Sorry, it\'s probably too warm to wear a sweater in ' + name + ". The current temperature is " + temp + ".")
 	} else {
-		var checkContent = document.createTextNode('Sorry, it\'s too cold for just a sweater in ' + name + ". The current temperature is " + temp + ".")
+		var checkContent = document.createTextNode('Sorry, it\'s probably too cold for just a sweater in ' + name + ". The current temperature is " + temp + ".")
 	}
 	
 	// add text to div
